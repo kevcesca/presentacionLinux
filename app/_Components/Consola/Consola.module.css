@@ -1,0 +1,6 @@
+.consola,
+.consolaContainer {
+    width: 50vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
