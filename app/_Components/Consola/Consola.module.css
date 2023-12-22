@@ -1,6 +1,13 @@
-.consola,
-.consolaContainer {
-    width: 50vw;
+.consola {
+    width: 80vw;
+    height: 120vh;
+    
+}
+
+.consolaContainer{
+    width: 80vw;
     height: 100vh;
+    object-fit: cover;
     overflow-y: hidden;
+    scroll-behavior: auto;
 }

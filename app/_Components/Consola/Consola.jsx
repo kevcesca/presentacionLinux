@@ -17,7 +17,7 @@ const Consola = () => {
     return (
         <div data-aos="flip-left" className={styles.consolaContainer}>
             <iframe
-                src="https://copy.sh/v86/?profile=linux26"
+                src="https://copy.sh/v86/?profile=archlinux"
                 className={styles.consola}
                 frameBorder="0"
                 scrolling="no"
