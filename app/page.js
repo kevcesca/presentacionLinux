@@ -19,6 +19,19 @@ import shellExpansion from '../public/images/ficheros/shellExpansion.png'
 import usuarios from '../public/images/usuarios/usuarios.png'
 import permisos from '../public/images/usuarios/permisosefectivos.webp'
 
+// Importacion de imagenes procesos
+import proceso from '../public/images/procesos/procesos.webp'
+import nice from '../public/images/procesos/procesos.png'
+import demons from '../public/images/procesos/demons.png'
+import estados from '../public/images/procesos/estados.png'
+
+// Importacion de imagenes generales
+import networking from '../public/images/networking.png'
+import dispositivos from '../public/images/dispositivos.png'
+import paquetes from '../public/images/paquetes.png'
+import variables from '../public/images/variables.png'
+import archivar from '../public/images/archivar.png'
+import expresiones from '../public/images/expresiones.png'
 
 export default function Home() {
   return (
@@ -220,6 +233,176 @@ export default function Home() {
         </Box>
       </Diapositiva>
 
+      <Consola />
+
+      {/* Seccion 9 */}
+      <Diapositiva title="¿Qué son los procesos en Linux?" imageUrl={proceso}>
+        <Box>
+          <Typography variant='h5'>Un proceso es una instancia de un programa en ejecución, que incluye el código del programa, su actividad actual, y su estado en la memoria del sistema.</Typography>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Características:</Typography>
+          <ul>
+            <li>Identificado por un ID único (PID).</li>
+            <li>Asociado con un usuario y un grupo específicos.</li>
+            <li>Posee su propio espacio de memoria y recursos del sistema.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Diapositiva title="Estados de un proceso" imageUrl={estados}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Estados Básicos:</Typography>
+          <ul>
+            <li><strong>Ejecutándose (Running):</strong> El proceso está siendo ejecutado en la CPU.</li>
+            <li><strong>Esperando (Waiting/Sleeping):</strong> El proceso espera por un evento o recurso.</li>
+            <li><strong>Detenido (Stopped):</strong> El proceso ha sido detenido, por ejemplo, por una señal.</li>
+            <li><strong>Terminado (Zombie/Defunct):</strong> El proceso ha terminado pero aún necesita ser removido de la tabla de procesos.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Diapositiva title="Demonios y servicios" imageUrl={demons}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Demonios (Daemons):</Typography>
+          <ul>
+            <li>Definición: Programas que se ejecutan en segundo plano, generalmente iniciados en el arranque del sistema.</li>
+            <li>Ejemplos: `httpd` (servidor web), `sshd` (SSH daemon).</li>
+            <li>Importancia en la gestión del sistema y servicios de red.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Servicios:</Typography>
+          <ul>
+            <li>Gestión a través de sistemas como `systemd` o `init`.</li>
+            <li>Control de servicios con comandos como `systemctl`.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Diapositiva title="Cambio de prioridad nice" imageUrl={nice}>
+        <Box>
+          <p>Concepto: Cambiar la prioridad de ejecución de un proceso para gestionar la carga de trabajo de la CPU.</p>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Uso del Comando `nice` y `renice`:</Typography>
+          <ul>
+            <li>nice: Iniciar un proceso con una prioridad dada.</li>
+            <li>renice: Cambiar la prioridad de un proceso en ejecución.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Consola />
+
+      {/* Seccion 10 */}
+      <Diapositiva title="Interfaces de Red y Direcciones IP en Linux" imageUrl={networking}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Interfaces de Red en Linux:</Typography>
+          <ul>
+            <li>Las interfaces de red son los dispositivos que permiten la comunicación en una red.</li>
+            <li>En Linux, se identifican mediante nombres como eth0 o wlan0.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Direcciones IP en Linux:</Typography>
+          <ul>
+            <li>Las direcciones IP identifican los dispositivos en una red.</li>
+            <li>En Linux, puedes configurar una dirección IP estática en el archivo /etc/network/interfaces o utilizar DHCP.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>DHCP (Protocolo de Configuración Dinámica de Host):</Typography>
+          <ul>
+            <li>DHCP asigna automáticamente direcciones IP a dispositivos en la red.</li>
+            <li>Facilita la gestión de direcciones IP en entornos grandes.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Consola />
+
+      {/* Seccion 11 */}
+      <Diapositiva title="Paquetes, Librerías y Dependencias en Linux" imageUrl={paquetes}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>¿Qué es un paquete en Linux?</Typography>
+          <ul>
+            <li>Un paquete es un conjunto de software empaquetado junto con su información de instalación.</li>
+            <li>Facilita la instalación y actualización de software en Linux.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>¿Qué es una librería en Linux?</Typography>
+          <ul>
+            <li>Una librería es un conjunto de funciones y código compartido por múltiples programas.</li>
+            <li>Ayuda a ahorrar espacio en disco y mejorar la eficiencia del sistema.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>¿Qué es una dependencia en Linux?</Typography>
+          <ul>
+            <li>Una dependencia es un software que un programa necesita para funcionar correctamente.</li>
+            <li>La gestión de dependencias es crucial para garantizar la estabilidad del sistema.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Consola />
+
+      {/* Seccion 12 */}
+      <Diapositiva title="Variables de Entorno en Linux" imageUrl={variables}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>¿Qué son las variables de entorno?</Typography>
+          <p>Configuraciones que afectan el comportamiento de los programas en Linux.</p>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Tipos de variables de entorno:</Typography>
+          <ul>
+            <li><strong>Temporales:</strong> Valores válidos solo durante la sesión actual.</li>
+            <li><strong>Permanentes:</strong> Valores que persisten entre sesiones.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Consola />
+
+      {/* Seccion 13 */}
+      <Diapositiva title="Dispositivos de Almacenamiento Externo en Linux" imageUrl={dispositivos}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>¿Qué son los dispositivos de almacenamiento externo?</Typography>
+          <ul>
+            <li>Son dispositivos portátiles que se conectan a una computadora para almacenar datos.</li>
+            <li>Ejemplos comunes: discos duros externos, unidades flash USB, tarjetas de memoria.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Administración de dispositivos externos en Linux:</Typography>
+          <ul>
+            <li>Linux es compatible con una variedad de dispositivos de almacenamiento externo.</li>
+            <li>La administración se realiza a través de comandos como mount y umount.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Consola />
+
+      {/* Seccion 14 */}
+      <Diapositiva title="Archivar y Comprimir en Linux" imageUrl={archivar}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Archivar en Linux</Typography>
+          <ul>
+            <li>Archivar en Linux significa agrupar varios archivos o directorios en uno solo.</li>
+            <li>Facilita la organización y el transporte de datos.</li>
+            <li>Comúnmente se utiliza el comando tar para archivar.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Comprimir en Linux</Typography>
+          <ul>
+            <li>Comprimir en Linux reduce el tamaño de archivos o directorios.</li>
+            <li>Ahorra espacio en disco y acelera la transferencia.</li>
+            <li>Se utiliza herramientas como gzip y zip para comprimir.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
+
+      <Consola />
+
+      {/* Seccion 15 */}
+      <Diapositiva title="Expresiones Regulares en Linux" imageUrl={expresiones}>
+        <Box>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Definición y diferencias clave</Typography>
+          <ul>
+            <li>ERE (Expresiones Regulares Extendidas) y BRE (Expresiones Regulares Básicas) son dos tipos de expresiones regulares en Linux.</li>
+            <li>ERE admite más metacaracteres y es más flexible que BRE.</li>
+          </ul>
+          <Typography variant='h5' sx={{ marginTop: '5vh' }}>Símbolos para expresiones regulares</Typography>
+          <ul>
+            <li>Los símbolos como ., *, y + son comunes en las expresiones regulares.</li>
+            <li>Permiten patrones de búsqueda avanzada y filtrado de texto.</li>
+          </ul>
+        </Box>
+      </Diapositiva>
 
 
     </main>
